@@ -412,7 +412,7 @@ namespace ZitiDesktopEdge {
 			this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.contextMenuItem });
 
 			this.contextMenuItem.Index = 0;
-			this.contextMenuItem.Text = "&Close UI";
+			this.contextMenuItem.Text = "关闭界面";
 			this.contextMenuItem.Click += new System.EventHandler(this.contextMenuItem_Click);
 
 
