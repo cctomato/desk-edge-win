@@ -62,7 +62,7 @@ namespace ZitiDesktopEdge {
 
 		public MainMenu() {
 			InitializeComponent();
-			Application.Current.MainWindow.Title = "Ziti Desktop Edge";
+			Application.Current.MainWindow.Title = "Zero Desktop Edge";
 			state = (ZDEWViewState)Application.Current.Properties["ZDEWViewState"];
 
 			try {

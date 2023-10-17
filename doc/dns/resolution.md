@@ -8,16 +8,16 @@ DNS makes it easy for a human to remember the address of a resource which should
 computer is connected to. For example if you were to point your browser to https://ziti.dev some DNS server would
 return the [IP address](https://en.wikipedia.org/wiki/IP_address) that represents this name (currently: 162.241.224.35)
 DNS is another example of something which seems simple at first but in reality is shockingly complex. 
-This page will attempt to inform you about how the Ziti Desktop Edge for Windows works and interacts with DNS.
+This page will attempt to inform you about how the Zero Desktop Edge for Windows works and interacts with DNS.
 
 ## DNS Server
 
 With Ziti, it is possible to intercept IP addresses. IP addresses are generally not as easy for a human to remember
-as the name of a server/resource on the network. The Ziti Desktop Edge for Windows thus needs to interact with DNS
+as the name of a server/resource on the network. The Zero Desktop Edge for Windows thus needs to interact with DNS
 so that a human can enter a well-known name and expect to be able to access the resource by name. 
 
-In order to interact with DNS the Ziti Desktop Edge for Windows will start a small DNS server of its own. The purpose
-of this DNS server is to allow DNS requests made by Windows to be sent to the Ziti Desktop Edge for Windows. There, these
+In order to interact with DNS the Zero Desktop Edge for Windows will start a small DNS server of its own. The purpose
+of this DNS server is to allow DNS requests made by Windows to be sent to the Zero Desktop Edge for Windows. There, these
 DNS requests are used to identify the [Ziti Service](https://openziti.github.io/ziti/services/overview.html?tabs=create-service-ui)
 which to be intercepted. If a match is found the associated IPv4 address is returned that corresponds to the intercepted 
 Ziti Service.
@@ -28,19 +28,19 @@ The server will listen on the IP address specified in the configuration by the p
 
 ### Windows NRPT
 
-Ziti Desktop Edge for Windows supports Windows 8+ as of spring of 2021.  Windows 8+ has functionality known as
+Zero Desktop Edge for Windows supports Windows 8+ as of spring of 2021.  Windows 8+ has functionality known as
 the Name Resolution Policy Table (NRPT). This functionality allows specific DNS requests to be sent to specific DNS
-servers. The NRPT is used by the Ziti Desktop Edge for Windows to direct Ziti Services which are meant to be
+servers. The NRPT is used by the Zero Desktop Edge for Windows to direct Ziti Services which are meant to be
 intercepted to the internal DNS resolver for resolution.  When a new service needs to be intercepted a rule will be
 added to the NRPT for that service which will tell windows that for the given intercept names DNS requests should 
-be sent to the Ziti Desktop Edge for Windows DNS server for resolution.
+be sent to the Zero Desktop Edge for Windows DNS server for resolution.
 
-If interested in seeing configured NRPT rules. Once a Ziti Desktop Edge for Windows is running - any Ziti Services 
+If interested in seeing configured NRPT rules. Once a Zero Desktop Edge for Windows is running - any Ziti Services 
 configured to be intercepted can be listed by issuing this powershell command: `Get-DnsClientNrptRule`.
 
 ### Fully Qualified Names
 
-The Ziti Desktop Edge for Windows considers DNS requests as "fully qualified" if the query in question
+The Zero Desktop Edge for Windows considers DNS requests as "fully qualified" if the query in question
 contains any period within it at any position and does not require a request to contain a trailing dot to be fully 
 qualified.  For example these would all be considered "fully qualified" names:
 
@@ -83,11 +83,11 @@ labeled: `Connection-specific DNS Suffix Search List`
 
 _*ALL*_ network adapters will be used to determine the full list of "Connection Specific Domains". If one adapter has
 a Connection Specific Domain of "home" while another has "work" this will result in two Connection Specific Domains being
-tracked by the Ziti Desktop Edge for Windows.
+tracked by the Zero Desktop Edge for Windows.
 
 All Connection Specific Domains are used to resolve any Ziti Service which uses an unqualified name. If a Ziti Service
 is mapped with an unqualified name and the network configuration for the Windows user is set to append DNS suffixes as
-shown above then when the DNS request is sent to the Ziti Desktop Edge for Windows it will contain one of the suffixes
+shown above then when the DNS request is sent to the Zero Desktop Edge for Windows it will contain one of the suffixes
 configured.  
 
 ##### Example
@@ -98,13 +98,13 @@ of simply `my-server`. The users will expect that any network request to `my-ser
 Desktop Edge for Windows. Windows will append unqualified DNS requests such as `my-server` with `from-dhcp` resulting
 in a DNS query for `my-server.from-dhcp`.
 
-When `my-server.from-dhcp` is sent to the Ziti Desktop Edge for Windows DNS server a precise DNS resolution will first 
+When `my-server.from-dhcp` is sent to the Zero Desktop Edge for Windows DNS server a precise DNS resolution will first 
 be attempted. In this example since the Ziti Service was configured to intercept `my-server` the initial resolution will
 fail as `my-server` is expected - but `my-server.from-dhcp` was provided in the DNS query.
 
-Next the Ziti Desktop Edge for Windows will look at each Connection Specific Domain detected and determine if the DNS
+Next the Zero Desktop Edge for Windows will look at each Connection Specific Domain detected and determine if the DNS
 request ends with a Connection Specific Domain. In this example the request will indeed match a Connection Specific Domain.
-The Ziti Desktop Edge for Windows will then remove the matching domain from the DNS query and attempt to resolve one
+The Zero Desktop Edge for Windows will then remove the matching domain from the DNS query and attempt to resolve one
 final time. Removing `from-dhcp` will result in a resolution request for `my-server` and in this example a match will be
 found and the assigned IPv4 address returned as the query answer.
 
@@ -112,12 +112,12 @@ found and the assigned IPv4 address returned as the query answer.
 
 DNS allows for subdomains. A DNS subdomain is additional qualifying information provided before the rest of the domain.
 For example in a DNS query to `www.google.com` the `www` part is considered a subdomain of `google.com` but also `google`
-is considered a subdomain of the top level domain (TLD) of `com`.  Subdomains are not resolved by the Ziti Desktop Edge
+is considered a subdomain of the top level domain (TLD) of `com`.  Subdomains are not resolved by the Zero Desktop Edge
 for Windows.
 
 ### Subdomain Example
 
-Consider a Ziti Service configured to intercept `my-server.ziti`. In order for the Ziti Desktop Edge for Windows to 
+Consider a Ziti Service configured to intercept `my-server.ziti`. In order for the Zero Desktop Edge for Windows to 
 resolve a DNS request sent to it, it must match exactly. In this example the following queries would produce no matches:
 
 * www.my-server.ziti
@@ -130,7 +130,7 @@ resolve a DNS request sent to it, it must match exactly. In this example the fol
 
 It is important to recognize that tools which are DNS-specific often times do not adhere to the rules Windows tries
 to enfoce and thus might bypass the NRPT. One application which does NOT use the NRPT is nslookup. When attempting to
-probe the Ziti Desktop Edge for Windows such as when troubleshooting it is better to use powershell's `Resolve-DNSName`
+probe the Zero Desktop Edge for Windows such as when troubleshooting it is better to use powershell's `Resolve-DNSName`
 commandlet as it will adhere to and query the NRPT properly.  
 
 If using powershell and `Resolve-DNSName` is not an option, when using `nslookup` provide the server to probe as part

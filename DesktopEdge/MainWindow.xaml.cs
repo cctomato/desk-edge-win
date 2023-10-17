@@ -69,7 +69,7 @@ namespace ZitiDesktopEdge {
 			ThisAssemblyName = asm.GetName().Name;
 			state = (ZDEWViewState)Application.Current.Properties["ZDEWViewState"];
 #if DEBUG
-			ExecutionDirectory = @"C:\Program Files (x86)\NetFoundry, Inc\Ziti Desktop Edge";
+			ExecutionDirectory = @"C:\Program Files (x86)\NetFoundry, Inc\Zero Desktop Edge";
 #else
 			ExecutionDirectory = Path.GetDirectoryName(asm.Location);
 #endif
@@ -860,12 +860,12 @@ namespace ZitiDesktopEdge {
 						if (!state.AutomaticUpdatesDisabled) {
 							if (remaining.TotalSeconds < 60) {
 								//this is an immediate update - show a different message
-								ShowToast("Ziti Desktop Edge will initiate auto installation in the next minute!");
+								ShowToast("Zero Desktop Edge will initiate auto installation in the next minute!");
 							} else {
-								ShowToast($"Update {evt.ZDEVersion} is available for Ziti Desktop Edge and will be automatically installed by " + evt.InstallTime);
+								ShowToast($"Update {evt.ZDEVersion} is available for Zero Desktop Edge and will be automatically installed by " + evt.InstallTime);
 							}
 						} else {
-							ShowToast($"Version {evt.ZDEVersion} is available for Ziti Desktop Edge");
+							ShowToast($"Version {evt.ZDEVersion} is available for Zero Desktop Edge");
 						}
 						SetNotifyIcon("");
 						// display a tag in UI and a button for the update software

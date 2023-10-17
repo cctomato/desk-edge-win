@@ -49,7 +49,7 @@
 # Release 2.1.14
 
 ## What's New
-* Ziti Desktop Edge for Windows can now be installed in an air-gapped (offline) environment
+* Zero Desktop Edge for Windows can now be installed in an air-gapped (offline) environment
 
 ## Other changes:
 * adds DNS flushing to tunneler
@@ -793,7 +793,7 @@ Services with multi factor authentication posture checks will give interface que
 ## What's New
 * DNS resolution has *CHANGED*. Users have had issues with the proxied DNS requests at times leading to an
   experience that was frustrating at time. Restarting the client fixed the problem but is also not what we want.
-  Now the Ziti Desktop Edge for Windows will add NRPT rules and only send intercepted services to the resolver.
+  Now the Zero Desktop Edge for Windows will add NRPT rules and only send intercepted services to the resolver.
   The resolver will still proxy requests it does not know but fewer requests should need to be made to the internal
   DNS resolver.
 * The internal DNS resolver no longer needs to be the primary DNS resolver on all interfaces due to the change
@@ -1151,7 +1151,7 @@ This is a substantial update. Some important stability fixes have been applied f
 * logs condensed into a single log file - only ziti-tunneler.log files remain (cziti.logs are removed)
 * clicking "Service Logs" will open the latest service log file. if ".log" is not mapped to a program the `${installFolder}\logs\service` folder will be opened
 * clicking "Application Logs" will open the latest UI log file. if ".log" is not mapped to a program the `${installFolder}\logs\UI` folder will be opened
-* closes [#254](https://github.com/openziti/desktop-edge-win/issues/254) - logs relocated to easier accessed location: "%ProgramFiles(x86)%\NetFoundry, Inc\Ziti Desktop Edge\logs"
+* closes [#254](https://github.com/openziti/desktop-edge-win/issues/254) - logs relocated to easier accessed location: "%ProgramFiles(x86)%\NetFoundry, Inc\Zero Desktop Edge\logs"
 
 ## Other changes:
 * collect-logs.ps1 has been removed in favor of logs being at a more accessible location and the 'feedback' button collecting logs anyway
@@ -1520,7 +1520,7 @@ skipped - 1.3.6 superseded this release
 
 * What's New
 
-  * Ziti Desktop Edge for Windows will now montior and install updates
+  * Zero Desktop Edge for Windows will now montior and install updates
 
 * Bug Fixes
 
@@ -1587,10 +1587,10 @@ skipped - 1.3.6 superseded this release
 * What's New
 
   * adds support for Ziti-provided end to end encryption
-  * upgrades the Ziti Desktop Edge Service to version 0.0.30
+  * upgrades the Zero Desktop Edge Service to version 0.0.30
   * the log level can now be changed from the UI by going to Advanced Settings -> Set Logging Level
   * the config file has been slimmed
-  * the name used to start/stop the Ziti Desktop Edge Service has been made much more convenient. 
+  * the name used to start/stop the Zero Desktop Edge Service has been made much more convenient. 
     Now you can start and stop the service with: `net start|stop ziti` (this is the change that
     necessitates removing and reinstalling the application during upgrade from previous versions)
 

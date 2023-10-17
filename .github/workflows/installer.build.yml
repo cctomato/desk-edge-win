@@ -13,7 +13,7 @@ env:
 
 jobs:
   build:
-    name: Build the Ziti Desktop Edge for Windows Installer Package
+    name: Build the Zero Desktop Edge for Windows Installer Package
     runs-on: windows-latest
     if: "!contains(github.event.head_commit.message, 'ci skip')"
     env:
@@ -86,7 +86,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ZitiDesktopEdgeClient-${{ env.VERSION }}
-          path: "Installer/Output/Ziti Desktop Edge Client-*"
+          path: "Installer/Output/Zero Desktop Edge Client-*"
       - name: Git Status
         run: git status
       - name: git diff

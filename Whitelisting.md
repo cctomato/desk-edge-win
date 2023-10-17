@@ -1,4 +1,4 @@
-# Whitelisting Ziti Desktop Edge for Windows in McAfee
+# Whitelisting Zero Desktop Edge for Windows in McAfee
 
 After publishing each release, write an email to McAfee data submission group, so they will whitelist WDE software in their database. Once it is whitelisted, McAfee will not list our software as a threat
 

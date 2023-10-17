@@ -30,7 +30,7 @@ namespace ZitiDesktopEdge {
 		protected override void OnStartup(StartupEventArgs e) {
 			Current.Properties["ZDEWViewState"] = new ZDEWViewState();
 
-			const string appName = "Ziti Desktop Edge";
+			const string appName = "Zero Desktop Edge";
 
 			bool createdNew;
 

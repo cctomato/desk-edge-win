@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         ShowInTaskbar="False"
         x:Name="MainUI"
-        Title="Ziti Desktop Edge" Height="520" 
+        Title="Zero Desktop Edge" Height="520" 
         Width="420" ResizeMode="NoResize" 
         ClipToBounds="False"
         Icon="Assets/Images/icon.png" AllowsTransparency="True" 

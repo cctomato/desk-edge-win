@@ -30,7 +30,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://support.netfoundry.io</SupportUrl>
     <TargetCulture>en-US</TargetCulture>
-    <ProductName>Ziti Desktop Edge</ProductName>
+    <ProductName>Zero Desktop Edge</ProductName>
     <PublisherName>NetFoundry</PublisherName>
     <SuiteName>Ziti</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>

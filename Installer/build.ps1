@@ -88,7 +88,7 @@ if($gituser -eq "ziti-ci") {
   echo "detected user [${gituser}] which is not ziti-ci - skipping installer commit"
 }
 
-$exeAbsPath="${scriptPath}\Output\Ziti Desktop Edge Client-${installerVersion}.exe"
+$exeAbsPath="${scriptPath}\Output\Zero Desktop Edge Client-${installerVersion}.exe"
 
 if($null -eq $env:OPENZITI_P12_PASS) {
     echo ""
@@ -99,5 +99,5 @@ if($null -eq $env:OPENZITI_P12_PASS) {
     echo "RUNNING: $ADV_INST_HOME\third-party\winsdk\x64\signtool" sign /f "${scriptPath}\openziti.p12" /p "${env:OPENZITI_P12_PASS}" /tr http://ts.ssl.com /fd sha512 /td sha512 /as "${exeAbsPath}"
     & "$ADV_INST_HOME\third-party\winsdk\x64\signtool" sign /f "${scriptPath}\openziti.p12" /p "${env:OPENZITI_P12_PASS}" /tr http://ts.ssl.com /fd sha512 /td sha512 /as "${exeAbsPath}"
 }
-(Get-FileHash "${exeAbsPath}").Hash > "${scriptPath}\Output\Ziti Desktop Edge Client-${installerVersion}.exe.sha256"
+(Get-FileHash "${exeAbsPath}").Hash > "${scriptPath}\Output\Zero Desktop Edge Client-${installerVersion}.exe.sha256"
 echo "========================== build.ps1 competed =========================="

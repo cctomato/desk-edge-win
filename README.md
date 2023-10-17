@@ -1,8 +1,8 @@
-# Ziti Desktop Edge for Windows
+# Zero Desktop Edge for Windows
 
 (the uwp project which used to be here has moved to [uwp-vpnplugin-archive](.uwp-vpnplugin-archive) and is likely abandoned)
 
-The Ziti Desktop Edge for Windows is an application that is necessary to integrate applications which cannot embed a Ziti SDK
+The Zero Desktop Edge for Windows is an application that is necessary to integrate applications which cannot embed a Ziti SDK
 directly into the application. This is colloquially known as a "brown field" Ziti-enabled application because the app
 itself has no understanding that it has been Ziti-enabled.
 
@@ -74,10 +74,10 @@ For more information about code signing requirements, refer to:
 http://msdn.microsoft.com/en-us/windows/hardware/gg487309.aspx 
  
 
-## Submit the Ziti Desktop Edge application to Microsoft store
+## Submit the Zero Desktop Edge application to Microsoft store
 
 Build the application using the same step "Building a release" above, it will generate a msixuplod file in the Build_MSIX_APPXSetupFiles folder inside the Installer directory. Then login to microsoft partner portal and follow the below steps to submit the application to microsoft store.
 
-1. Go to Windows & xbox and create an application with the name Ziti Desktop Edge. Once this application name is reserved for you, you can create the submission. (One time step)
+1. Go to Windows & xbox and create an application with the name Zero Desktop Edge. Once this application name is reserved for you, you can create the submission. (One time step)
 2. Create a package flight and upload the msixupload file. When you click on save, it will validate the package. It will verify whether the applcation Id and name are matching to what is configured in the partner portal. If there are validation errors, you need to fix the errors first and upload the package again. You dont need to digitally sign the exe when you create the package, the partner portal will sign it for you.
 3. Once the package is validated and saved successfully, create a submission with this packge. Ziti application requires restricted capabilities like runFullTrust, localSystemServices and packagedServices. These capabilities are configured in the new Package aip file. So this submission has to be approved by the partner portal, when you submit it for the first time. You need to provide explanation stating why we need whose features and submit to the store for approval.

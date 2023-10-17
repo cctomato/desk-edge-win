@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ziti Desktop Edge")]
+[assembly: AssemblyTitle("Zero Desktop Edge")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Ziti Desktop Edge")]
+[assembly: AssemblyProduct("Zero Desktop Edge")]
 [assembly: AssemblyCopyright("Copyright NetFoundry © 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

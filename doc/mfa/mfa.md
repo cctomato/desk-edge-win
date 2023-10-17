@@ -2,7 +2,7 @@
 
 ## Enabling MFA
 
-As of 1.9.0 the Ziti Desktop Edge for Windows supports [Time-based One-time Passwords](https://en.wikipedia.org/wiki/Time-based_One-Time_Password) as a secondary form of authentication. Enabling MFA is straight forward and can be done by following the steps outlined below.
+As of 1.9.0 the Zero Desktop Edge for Windows supports [Time-based One-time Passwords](https://en.wikipedia.org/wiki/Time-based_One-Time_Password) as a secondary form of authentication. Enabling MFA is straight forward and can be done by following the steps outlined below.
 
 After enrolling an identity click on it and open the detail page. On the detail page click the toggle to enable mfa:
 
