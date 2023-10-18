@@ -43,11 +43,11 @@
                 <Rectangle Margin="40,0,40,10" Fill="#070826" Height="1" RadiusY="10" RadiusX="10" Opacity="0.1"></Rectangle>
                 <local:MenuEditItem x:Name="IdServer" Label="中央网络" IsLocked="True" />
                 <Rectangle Margin="40,0,40,10" Fill="#070826" Height="1" RadiusY="10" RadiusX="10" Opacity="0.1"></Rectangle>
-                <local:MenuEditToggle x:Name="IdentityMFA" Visibility="Visible" HorizontalAlignment="Stretch" Label="Multi Factor Auth" Margin="0,10,0,0" Recovery="MFARecovery" Authenticate="MFAAuthenticate" Toggle="ToggleMFA"></local:MenuEditToggle>
+                <local:MenuEditToggle x:Name="IdentityMFA" Visibility="Collapsed" HorizontalAlignment="Stretch" Label="Multi Factor Auth" Margin="0,10,0,0" Recovery="MFARecovery" Authenticate="MFAAuthenticate" Toggle="ToggleMFA"></local:MenuEditToggle>
 
-                <local:Filter Visibility="Visible" x:Name="FilterServices" OnFilter="DoFilter" VerticalAlignment="Top" Margin="10,16,10,0" />
+                <local:Filter Visibility="Collapsed" x:Name="FilterServices" OnFilter="DoFilter" VerticalAlignment="Top" Margin="10,16,10,0" />
 
-                <TextBox Name="NoAuthServices" Height="30" FontWeight="Bold" Margin="10,0,10,0" TextAlignment="Center" Text="You must authenticate to access services" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="0" ClipToBounds="True" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" Padding="0,6,3,0" FontSize="12" FontFamily="pack://application:,,,/Assets/Fonts/#Open Sans" Foreground="Black"></TextBox>
+                <TextBox Name="NoAuthServices" Height="30" FontWeight="Bold" Margin="10,0,10,0" TextAlignment="Center" Text="通过认证连接到服务" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="0" ClipToBounds="True" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" Padding="0,6,3,0" FontSize="12" FontFamily="pack://application:,,,/Assets/Fonts/#Open Sans" Foreground="Black"></TextBox>
                 <Grid Name="MainDetailScroll" MaxHeight="160" Margin="10,0,10,-10">
                     <Rectangle Margin="10,10,10,10" Fill="#070826" RadiusY="10" RadiusX="10"></Rectangle>
                     <ListView x:Name="ServiceList" VirtualizingPanel.IsVirtualizing="True" ScrollViewer.IsDeferredScrollingEnabled="True" ScrollViewer.ScrollChanged="Scrolled" Focusable="False" IsManipulationEnabled="False" BorderThickness="0" Background="Transparent" Margin="20,20,10,20" Style="{DynamicResource ServiceListStyle}">
@@ -90,7 +90,7 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </Grid>
-                <Label x:Name="ServiceCount" HorizontalAlignment="Center" Content="0 Services" Margin="0,0,0,0" Foreground="Gray" FontWeight="Bold" FontSize="12" FontFamily="pack://application:,,,/Assets/Fonts/#Open Sans"></Label>
+                <Label x:Name="ServiceCount" Visibility="Collapsed" HorizontalAlignment="Center" Content="0 Services" Margin="0,0,0,0" Foreground="Gray" FontWeight="Bold" FontSize="12" FontFamily="pack://application:,,,/Assets/Fonts/#Open Sans"></Label>
                 <Grid>
                     <Rectangle x:Name="AuthMessageBg" Margin="40,0,40,0" Opacity="0.8" RadiusX="7" RadiusY="7" ClipToBounds="True" Height="30" VerticalAlignment="Bottom" Cursor="Hand" MouseUp="AuthFromMessage">
                         <Rectangle.Fill>
