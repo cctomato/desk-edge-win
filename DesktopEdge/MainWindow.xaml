@@ -136,13 +136,13 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" Cursor="Hand" Orientation="Vertical" Margin="14,16,14,14" MouseLeftButtonUp="ShowMenu">
-                    <Image Source="/Assets/Images/hamburger.png" Margin="5,0,0,-4" Width="26" Height="26" HorizontalAlignment="Left"></Image>
-                    <Label Content="MAIN" FontFamily="pack://application:,,,/Assets/Fonts/#Open Sans" Foreground="White" Height="25" FontSize="10"></Label>
-                    <Label Content="MENU" FontFamily="pack://application:,,,/Assets/Fonts/#Open Sans" Foreground="White" Height="25" Margin="0,-14,0,0" FontSize="10"></Label>
+                <StackPanel Grid.Column="0" Cursor="Hand" Orientation="Vertical" Margin="14,16,14,14" MouseLeftButtonUp="ShowMenu" Visibility="Hidden">
+                    <Image Source="/Assets/Images/hamburger.png" Margin="5,0,0,-4" Width="26" Height="26" HorizontalAlignment="Left" Visibility="Hidden"></Image>
+                    <Label Content="MAIN" FontFamily="pack://application:,,,/Assets/Fonts/#Open Sans" Foreground="White" Height="25" FontSize="10" Visibility="Hidden"></Label>
+                    <Label Content="MENU" FontFamily="pack://application:,,,/Assets/Fonts/#Open Sans" Foreground="White" Height="25" Margin="0,-14,0,0" FontSize="10" Visibility="Hidden"></Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,12" MouseDown="Window_MouseDown">
-                    <Image Source="/Assets/Images/z.png" Height="40" RenderOptions.BitmapScalingMode="Fant"></Image>
+                    <Image Source="/Assets/Images/z.png" Height="40" RenderOptions.BitmapScalingMode="Fant" ></Image>
                     <Label Content="点击连接" MouseDoubleClick="Label_MouseDoubleClick" Margin="0,-3,0,0" FontFamily="pack://application:,,,/Assets/Fonts/#Russo One" FontSize="14" Foreground="White" HorizontalAlignment="Center"></Label>
                 </StackPanel>
                 <StackPanel x:Name="AddIdAreaButton" Grid.Column="2" Cursor="Hand" Orientation="Vertical" Margin="14,16,14,14" MouseLeftButtonUp="AddIdentity" Visibility="Collapsed">
