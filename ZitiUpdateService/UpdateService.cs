@@ -685,13 +685,13 @@ namespace ZitiUpdateService {
 #else
 			string updateUrl = null;
 			string releasesUrl = null;
-			if (!IsBeta) {
-				updateUrl = "https://api.github.com/repos/openziti/desktop-edge-win/releases/latest"; //hardcoded on purpose
-				releasesUrl = GithubAPI.ProdReleasesUrl;
-			} else {
-				updateUrl = "https://api.github.com/repos/openziti/desktop-edge-win-beta/releases/latest";
-				releasesUrl = GithubAPI.BetaReleasesUrl;
-			}
+			// if (!IsBeta) {
+			// 	updateUrl = "https://api.github.com/repos/openziti/desktop-edge-win/releases/latest"; //hardcoded on purpose
+			// 	releasesUrl = GithubAPI.ProdReleasesUrl;
+			// } else {
+			// 	updateUrl = "https://api.github.com/repos/openziti/desktop-edge-win-beta/releases/latest";
+			// 	releasesUrl = GithubAPI.BetaReleasesUrl;
+			// }
 			var check = new GithubCheck(v, updateUrl, releasesUrl);
 #endif
 			return check;
