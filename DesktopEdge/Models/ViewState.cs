@@ -12,7 +12,7 @@ namespace Ziti.Desktop.Edge.Models
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
-        private bool automaticUpdatesDisabled = false;
+        private bool automaticUpdatesDisabled = true;
         public bool AutomaticUpdatesDisabled
         {
             get
